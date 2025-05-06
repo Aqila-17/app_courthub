@@ -15,6 +15,7 @@ $result = mysqli_query($koneksi, "SELECT * FROM lapangan");
             <th>Lokasi</th>
             <th>Harga</th>
             <th>Status</th>
+            <th>Deskripsi</th>
             <th>Aksi</th>
         </tr>
         <?php while($row = mysqli_fetch_assoc($result)) { ?>
@@ -22,8 +23,9 @@ $result = mysqli_query($koneksi, "SELECT * FROM lapangan");
             <td><?= $row['nama_lapangan'] ?></td>  
             <td><?= $row['jenis_lapangan'] ?></td>  
             <td><?= $row['lokasi'] ?></td>  
-            <td>Rp <?= number_format($row['harga_per_jam'], 0, ',', '.') ?></td>  <!-- Sesuaikan nama kolom -->
+            <td>Rp <?= number_format($row['harga_per_jam'], 0, ',', '.') ?></td>  
             <td><?= $row['status'] ?></td>  
+            <td><?= $row['deskripsi'] ?></td>
             <td>
                 <a href="lapangan_edit.php?id=<?= $row['id_lapangan'] ?>">Edit</a> 
                 <a href="lapangan_hapus.php?id=<?= $row['id_lapangan'] ?>" onclick="return confirm('Hapus lapangan ini?')">Hapus</a>

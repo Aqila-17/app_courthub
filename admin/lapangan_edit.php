@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $jenis_lapangan = $_POST['jenis'];
     $lokasi = $_POST['lokasi'];
     $harga_per_jam = $_POST['harga'];
+    $deskripsi = $_POST['deskripsi'];
     $status = $_POST['status'];
 
     $query = "UPDATE lapangan SET 
@@ -16,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 jenis_lapangan='$jenis_lapangan', 
                 lokasi='$lokasi', 
                 harga_per_jam='$harga_per_jam', 
+                deskripsi='$deskripsi',
                 status='$status' 
               WHERE id_lapangan=$id_lapangan";
     mysqli_query($koneksi, $query);
@@ -30,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     Jenis: <input type="text" name="jenis" value="<?= $data['jenis_lapangan'] ?>"><br>
     Lokasi: <input type="text" name="lokasi" value="<?= $data['lokasi'] ?>"><br>
     Harga: <input type="number" name="harga" value="<?= $data['harga_per_jam'] ?>"><br>
+    Deskripsi: <input type="text" name="deskripsi" value="<?= $data['deskripsi'] ?>"><br>
     Status:
     <select name="status">
         <option value="tersedia" <?= $data['status'] == 'tersedia' ? 'selected' : '' ?>>Tersedia</option>

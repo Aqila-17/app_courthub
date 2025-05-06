@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CourtHub - Sewa Lapangan</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Tambahkan font atau icon jika diperlukan -->
 </head>
 <body>
     <header style="padding: 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd;">
         <div>
-            <img src="assets/img/logo.png" alt="CourtHub Logo" style="height: 40px;">
+            <img src="assets/img/WhatsApp Image 2025-04-09 at 12.31.16.jpeg" alt="CourtHub Logo" style="height: 40px;">
         </div>
         <nav style="display: flex; gap: 30px; align-items: center;">
             <a href="index.php">Sewa Lapangan</a>

@@ -18,22 +18,22 @@ $query = "SELECT * FROM lapangan WHERE 1=1";
 
 // Tambahkan filter
 if (!empty($keyword)) {
-    $query .= " AND nama LIKE '%$keyword%'";
+    $query .= " AND nama_lapangan LIKE '%$keyword%'";
 }
 if (!empty($kota)) {
-    $query .= " AND kota = '$kota'";
+    $query .= " AND lokasi = '$kota'";
 }
 if (!empty($cabang)) {
-    $query .= " AND kategori = '$cabang'";
+    $query .= " AND jenis_lapangan = '$cabang'";
 }
 
 // Sorting
 if ($sort === 'harga_termurah') {
-    $query .= " ORDER BY harga ASC";
+    $query .= " ORDER BY harga_per_jam ASC";
 } elseif ($sort === 'harga_tertinggi') {
-    $query .= " ORDER BY harga DESC";
+    $query .= " ORDER BY harga_per_jam DESC";
 } else {
-    $query .= " ORDER BY id ASC"; // Default
+    $query .= " ORDER BY id_lapangan ASC"; // Default
 }
 
 // Pagination
@@ -49,9 +49,9 @@ $result = mysqli_query($koneksi, $query);
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '<div class="card">';
                 echo '<img src="assets/img/' . $row['gambar'] . '" alt="venue">';
-                echo '<h3>' . $row['nama'] . '</h3>';
-                echo '<p>' . $row['kategori'] . '</p>';
-                echo '<p>mulai <strong>Rp ' . number_format($row['harga'], 0, ',', '.') . '</strong>/jam</p>';
+                echo '<h3>' . $row['nama_lapangan'] . '</h3>';
+                echo '<p>' . $row['jenis_lapangan'] . '</p>';
+                echo '<p>mulai <strong>Rp ' . number_format($row['harga_per_jam'], 0, ',', '.') . '</strong>/jam</p>';
                 echo '</div>';
             }
         } else {
@@ -64,10 +64,10 @@ $result = mysqli_query($koneksi, $query);
     <div class="pagination" style="margin-top: 20px;">
         <?php
         // Hitung total data
-        $countQuery = "SELECT COUNT(*) AS total FROM venue WHERE 1=1";
-        if (!empty($keyword)) $countQuery .= " AND nama LIKE '%$keyword%'";
-        if (!empty($kota)) $countQuery .= " AND kota = '$kota'";
-        if (!empty($cabang)) $countQuery .= " AND kategori = '$cabang'";
+        $countQuery = "SELECT COUNT(*) AS total FROM lapangan WHERE 1=1";
+        if (!empty($keyword)) $countQuery .= " AND nama_lapangan LIKE '%$keyword%'";
+        if (!empty($kota)) $countQuery .= " AND lokasi = '$kota'";
+        if (!empty($cabang)) $countQuery .= " AND jenis_lapangan = '$cabang'";
 
         $countResult = mysqli_query($koneksi, $countQuery);
         $totalRow = mysqli_fetch_assoc($countResult)['total'];
@@ -83,3 +83,4 @@ $result = mysqli_query($koneksi, $query);
 </div>
 
 <?php include("include/footer.php"); ?>
+

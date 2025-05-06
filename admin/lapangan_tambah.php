@@ -6,13 +6,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $jenis_lapangan = $_POST['jenis'];
     $lokasi = $_POST['lokasi'];
     $harga_per_jam = $_POST['harga'];
+    $deskripsi = $_POST['deskripsi'];
     $status = $_POST['status'];
     $gambar = $_FILES['gambar']['name'];
 
     move_uploaded_file($_FILES['gambar']['tmp_name'], "../assets/img/" . $gambar);
 
-    $query = "INSERT INTO lapangan (nama_lapangan, jenis_lapangan, lokasi, harga_per_jam, status, gambar) 
-              VALUES ('$nama_lapangan', '$jenis_lapangan', '$lokasi', '$harga_per_jam', '$status', '$gambar')";
+    $query = "INSERT INTO lapangan (nama_lapangan, jenis_lapangan, lokasi, harga_per_jam, deskripsi, status, gambar) 
+              VALUES ('$nama_lapangan', '$jenis_lapangan', '$lokasi', '$harga_per_jam', '$deskripsi', '$status', '$gambar')";
     mysqli_query($koneksi, $query);
     header("Location: dashboard.php");
     exit;
@@ -25,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     Jenis: <input type="text" name="jenis"><br>
     Lokasi: <input type="text" name="lokasi"><br>
     Harga: <input type="number" name="harga"><br>
+    Deskripsi: <input type="text" name="deskripsi"><br>
     Status:
     <select name="status">
         <option value="tersedia">Tersedia</option>

@@ -2,8 +2,7 @@
 <?php include("include/header.php"); ?>
 
 <div class="hero">
-    <h1>SEWA LAPANGAN</h1>
-    <a href="#" class="cta-button">DAFTARKAN VENUE</a>
+   
 </div>
 
 <div class="search-bar">
@@ -31,15 +30,18 @@
         $result = mysqli_query($koneksi, $query);
 
         while ($row = mysqli_fetch_assoc($result)) {
+            echo '<a href="lapangan_detail.php?id=' . $row['id_lapangan'] . '" class="card-link">';
             echo '<div class="card">';
             echo '<img src="assets/img/' . $row['gambar'] . '" alt="lapangan">';
             echo '<h3>' . $row['nama_lapangan'] . '</h3>';
             echo '<p>' . $row['jenis_lapangan'] . '</p>';
             echo '<p>mulai <strong>Rp ' . number_format($row['harga_per_jam'], 0, ',', '.') . '</strong>/jam</p>';
             echo '</div>';
+            echo '</a>';
         }
         ?>
     </div>
 </div>
 
+<link rel="stylesheet" href="style/home.css">
 <?php include("include/footer.php"); ?>
