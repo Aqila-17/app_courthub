@@ -6,19 +6,18 @@ include_once('../koneksi.php');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id_lapangan = $_POST['id_lapangan'] ?? null;
     $tanggal = $_POST['tanggal'] ?? null;
-    $jam = $_POST['jam'] ?? null;
+  $jam_list = $_POST['jam'] ?? [];
 
-    if (!$id_lapangan || !$tanggal || !$jam) {
-        echo "Data tidak lengkap. Silakan coba lagi.";
-        exit;
-    }
+if (!$id_lapangan || !$tanggal || empty($jam_list)) {
+    echo "Data tidak lengkap. Silakan coba lagi.";
+    exit;
+}
 
-    // Simpan ke session cart
-    if (!isset($_SESSION['cart'])) {
-        $_SESSION['cart'] = [];
-    }
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = [];
+}
 
-    // Cek apakah lapangan + tanggal + jam ini sudah ada di cart (hindari duplikat)
+foreach ($jam_list as $jam) {
     $exists = false;
     foreach ($_SESSION['cart'] as $item) {
         if ($item['id_lapangan'] == $id_lapangan && $item['tanggal'] == $tanggal && $item['jam'] == $jam) {
@@ -26,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             break;
         }
     }
+
     if (!$exists) {
         $_SESSION['cart'][] = [
             'id_lapangan' => $id_lapangan,
@@ -33,6 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'jam' => $jam
         ];
     }
+}
+
 
     // Redirect ke halaman keranjang agar tidak submit ulang form saat refresh
     header('Location: keranjang.php');
