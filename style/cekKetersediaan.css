@@ -1,0 +1,108 @@
+
+  body {
+    background: #fff;
+    color: #111;
+    padding: 20px;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .logo {
+    font-weight: bold;
+    font-size: 20px;
+    color: #D92A2A;
+  }
+  
+  nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #000;
+  }
+  
+  nav a.disabled {
+    color: #bbb;
+  }
+  
+  .actions button {
+    margin-left: 10px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  button.masuk {
+    background: #fff;
+    border: 2px solid #D92A2A;
+    color: #D92A2A;
+  }
+  
+  button.daftar {
+    background: #D92A2A;
+    color: #fff;
+  }
+  
+  .availability h2 {
+    margin: 20px 0 10px;
+    font-size: 24px;
+  }
+  
+  .date-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .date-selector button {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px 12px;
+    background: #fff;
+    cursor: pointer;
+  }
+  
+  .date-selector button.active {
+    background: #D92A2A;
+    color: #fff;
+    border-color: #D92A2A;
+  }
+  
+  .date-selector .calendar,
+  .date-selector .filter {
+    background: #f5f5f5;
+  }
+  
+  .slots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .slot {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .reschedule h3 {
+    margin-bottom: 10px;
+  }
+  
+  .rules {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 14px;
+  }
+  

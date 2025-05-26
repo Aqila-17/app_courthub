@@ -15,12 +15,11 @@
             <a href="index.php">Sewa Lapangan</a>
             <a href="blog.php">Blog</a>
             <a href="#"><img src="assets/img/cart.png" alt="Cart" style="height: 20px;"></a>
-            <a href="login.php" style="background: red; color: white; padding: 8px 15px; border-radius: 5px;">Masuk</a>
-            <a href="register.php" style="border: 1px solid red; padding: 8px 15px; border-radius: 5px;">Daftar</a>
+            <a href="../app_courthub/account/login.php" style="background: red; color: white; padding: 8px 15px; border-radius: 5px;">Masuk</a>
+            <a href="../app_courthub/account/register.php" style="border: 1px solid red; padding: 8px 15px; border-radius: 5px;">Daftar</a>
         </nav>
     </header>
 
-    <!-- Banner halaman (optional bisa dihilangkan jika bukan di homepage) -->
     <section style="background: url('assets/img/grass-banner.jpg'); background-size: cover; padding: 60px; text-align: center;">
         <h1 style="font-size: 48px; color: white;">SEWA LAPANGAN</h1>
         <a href="venue-register.php" style="margin-top: 15px; display: inline-block; background: red; color: white; padding: 10px 20px; border-radius: 8px; font-weight: bold;">DAFTARKAN VENUE</a>

@@ -31,7 +31,7 @@ $data = mysqli_fetch_assoc($result);
         <p class="harga">Harga: <strong>Rp <?php echo number_format($data['harga_per_jam'], 0, ',', '.'); ?></strong> / jam</p>
         <p class="deskripsi"><?php echo nl2br($data['deskripsi']); ?></p>
 
-        <a href="cekKetersediaan.php?id=<?php echo $data['id_lapangan']; ?>" class="btn-book">Cek Ketersediaan</a>
+        <a href="../app_courthub/booking/jadwal.php?id=<?php echo $data['id_lapangan']; ?>" class="btn-book">Cek Ketersediaan</a>
     </div>
 </div>
 

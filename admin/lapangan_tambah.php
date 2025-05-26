@@ -26,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     Jenis: <input type="text" name="jenis"><br>
     Lokasi: <input type="text" name="lokasi"><br>
     Harga: <input type="number" name="harga"><br>
+   Gambar: <input type="file" name="gambar"><br>
     Deskripsi: <input type="text" name="deskripsi"><br>
     Status:
     <select name="status">

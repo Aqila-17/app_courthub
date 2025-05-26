@@ -10,13 +10,14 @@
         <input type="text" name="keyword" placeholder="Cari Lapangan">
         <select name="kota">
             <option value="">Pilih Kota</option>
-            <option value="Jakarta">Jakarta</option>
-            <option value="Bandung">Bandung</option>
+            <option value="Purbalingga">Purbalingga</option>
+            <option value="Bandung">Purwokerto</option>
         </select>
         <select name="cabang">
             <option value="">Cabang Olahraga</option>
             <option value="Sepak Bola">Sepak Bola</option>
             <option value="Badminton">Badminton</option>
+            <option value="Futsal">Futsal</option>
         </select>
         <button type="submit">CARI VENUE</button>
     </form>

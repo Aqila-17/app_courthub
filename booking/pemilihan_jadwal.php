@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("koneksi.php");
+include("../koneksi.php");
 
 $id_user = $_SESSION['user_id'];
 $cekKeranjang = mysqli_query($koneksi, "SELECT * FROM keranjang WHERE id_user=$id_user AND status='pending'");
@@ -32,6 +32,6 @@ if (isset($_GET['tanggal'])) {
         }
         echo "</div>";
     }
-    echo "</div>";
+    
 }
 ?>
