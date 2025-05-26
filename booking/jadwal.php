@@ -4,7 +4,6 @@ include_once('../koneksi.php');
 $id_lapangan = $_GET['id'] ?? null;
 $tanggal = $_GET['tanggal'] ?? null;
 
-// Validasi id lapangan
 if (!$id_lapangan) {
     echo "ID lapangan tidak tersedia.";
     exit;
@@ -15,7 +14,6 @@ $jam_tersedia = [
   "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00"
 ];
 
-// Batas tanggal: hanya bulan ini
 $firstDay = date('Y-m-01');
 $lastDay = date('Y-m-t');
 ?>
@@ -29,7 +27,6 @@ $lastDay = date('Y-m-t');
 <body>
   <h2>Cek Ketersediaan Lapangan</h2>
 
-  <!-- FORM PILIH TANGGAL -->
   <form method="GET" action="jadwal.php">
     <input type="hidden" name="id" value="<?= htmlspecialchars($id_lapangan) ?>">
     <label for="tanggal">Pilih Tanggal:</label>
@@ -47,7 +44,7 @@ $lastDay = date('Y-m-t');
       
       <?php foreach ($jam_tersedia as $jam): ?>
         <label style="display:block;margin:10px 0;">
-          <input type="radio" name="jam" value="<?= $jam ?>" required>
+          <input type="checkbox" name="jam[]" value="<?= $jam ?>">
           <?= $jam ?> - Rp100.000
         </label>
       <?php endforeach; ?>
@@ -55,7 +52,6 @@ $lastDay = date('Y-m-t');
       <button type="submit">Tambahkan ke Keranjang</button>
     </form>
   <?php endif; ?>
-
 </body>
 <link rel="stylesheet" href="../style/cekKetersediaan.css">
 </html>
